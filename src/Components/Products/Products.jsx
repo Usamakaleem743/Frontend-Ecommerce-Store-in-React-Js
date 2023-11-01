@@ -19,7 +19,7 @@ function Products() {
         <>
             <div className="container d-flex flex-wrap justify-content-between mt-5" style={{ borderBottom: '1px solid lightgray' }}>
                 <h2>Featured Products</h2>
-                <div className="div">
+                <div className="div menu">
                     <button className='btn btn-sm btn-dark'>All</button>
                     <button className='btn btn-sm btn-outline'>Power Tools</button>
                     <button className='btn btn-sm btn-outline'>Hand Tools</button>
@@ -258,7 +258,7 @@ function Products() {
                         <Tabs
                             defaultActiveKey="featured"
                             id="uncontrolled-tab-example"
-                            className="mb-3 tabs"
+                            className="mb-3 tabs mt-1"
                             color='black'
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
@@ -393,7 +393,7 @@ function Products() {
                         <Tabs
                             defaultActiveKey="featured"
                             id="uncontrolled-tab-example"
-                            className="mb-3 tabs"
+                            className="mb-3 tabs mt-1"
                             color='black'
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
@@ -528,7 +528,7 @@ function Products() {
                         <Tabs
                             defaultActiveKey="featured"
                             id="uncontrolled-tab-example"
-                            className="mb-3 tabs"
+                            className="mb-3 tabs mt-1"
                             color='black'
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>

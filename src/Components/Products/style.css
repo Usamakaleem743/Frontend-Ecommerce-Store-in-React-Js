@@ -101,11 +101,13 @@
 @media screen and (max-width:1200px){
     .products1 .card{
         width: 14rem;
+        margin: auto;
     }
 }
 @media screen and (max-width:995px){
     .products1 .card{
         width: 20rem;
+        margin: auto;
     }
 }
 
@@ -126,5 +128,11 @@
     .cards .product{
         width:18rem;
         margin: auto;
+    }
+}
+
+@media screen and (max-width:750px){
+    .menu{
+        display: none;
     }
 }

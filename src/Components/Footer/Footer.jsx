@@ -1,5 +1,4 @@
 import React from 'react'
-
 const Footer = () => {
     return (
         <>
@@ -80,7 +79,7 @@ const Footer = () => {
                 <p style={{color:"gray",marginTop:'8px'}}>@Copyright 2023 , Created by <b style={{color:'white'}}>Usama Kaleem</b></p>
                 </div>
                 <div className="col-md-6 ">
-                <img src="/Images/payments.png" height={'35px'} style={{marginTop:'8px',float:'right',width:'auto'}} alt="" />
+                <img src="/Images/payments.png" height={'32px'} style={{marginTop:'8px',float:'right',width:'300px'}} alt="" />
                 </div>
             </div>
         </div>

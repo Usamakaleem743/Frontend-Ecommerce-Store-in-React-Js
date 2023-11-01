@@ -10,7 +10,7 @@ const New = () => {
         <div className='container'>
             <div className=" d-flex flex-wrap justify-content-between mt-5" style={{ borderBottom: '1px solid lightgray' }}>
                 <h2>New Arrivals</h2>
-                <div className="div">
+                <div className="div menu">
                     <button className='btn btn-sm btn-dark'>All</button>
                     <button className='btn btn-sm btn-outline'>Wheel Covers</button>
                     <button className='btn btn-sm btn-outline'>Timing Belts</button>
@@ -194,7 +194,7 @@ const New = () => {
 
             <div className=" d-flex flex-wrap justify-content-between mt-5" style={{ borderBottom: '1px solid lightgray' }}>
                 <h2>Latest News</h2>
-                <div className="div">
+                <div className="div menu">
                     <button className='btn btn-sm btn-dark'>All</button>
                     <button className='btn btn-sm btn-outline'>Special Offers</button>
                     <button className='btn btn-sm btn-outline'>New Arrivals</button>
