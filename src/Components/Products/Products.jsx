@@ -17,7 +17,7 @@ import './style.css'
 function Products() {
     return (
         <>
-            <div className="container d-flex justify-content-between mt-5" style={{ borderBottom: '1px solid lightgray' }}>
+            <div className="container d-flex flex-wrap justify-content-between mt-5" style={{ borderBottom: '1px solid lightgray' }}>
                 <h2>Featured Products</h2>
                 <div className="div">
                     <button className='btn btn-sm btn-dark'>All</button>
@@ -29,9 +29,9 @@ function Products() {
                 </div>
             </div>
             <div className="container my-5">
-                <div className="row">
-                    <div className="col-md-3 my-2">
-                        <Card style={{ width: '20rem' }}>
+                <div className="row products1">
+                    <div className="col-md-6  col-lg-3 my-2">
+                        <Card className='card' >
                             <Card.Img variant="top" src={product1} />
                             <Card.Body>
                                 <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
@@ -54,8 +54,8 @@ function Products() {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col-md-3 my-2">
-                        <Card style={{ width: '20rem' }}>
+                    <div className="col-md-6  col-lg-3 my-2">
+                        <Card className='card'>
                             <Card.Img variant="top" src={product2} />
                             <Card.Body>
                                 <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
@@ -78,8 +78,8 @@ function Products() {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col-md-3 my-2">
-                        <Card style={{ width: '20rem' }}>
+                    <div className="col-md-6  col-lg-3 my-2">
+                        <Card className='card'>
                             <Card.Img variant="top" src={product3} />
                             <Card.Body>
                                 <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
@@ -102,8 +102,8 @@ function Products() {
                             </Card.Body>
                         </Card>
                     </div>
-                    <div className="col-md-3 my-2">
-                        <Card style={{ width: '20rem' }}>
+                    <div className="col-md-6  col-lg-3 my-2">
+                        <Card className='card'>
                             <Card.Img variant="top" src={product4} />
                             <Card.Body>
                                 <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
@@ -137,9 +137,9 @@ function Products() {
 
             <div className="products">
                 <div className="container my-5  py-5">
-                    <div className="row">
-                        <div className="col-md-3 my-2">
-                            <Card style={{ width: '20rem' }}>
+                    <div className="row products1">
+                        <div className="col-md-6  col-lg-3 my-2">
+                            <Card className='card' >
                                 <Card.Img variant="top" src={product1} />
                                 <Card.Body>
                                     <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
@@ -162,8 +162,8 @@ function Products() {
                                 </Card.Body>
                             </Card>
                         </div>
-                        <div className="col-md-3 my-2">
-                            <Card style={{ width: '20rem' }}>
+                        <div className="col-md-6  col-lg-3 my-2">
+                            <Card className='card'>
                                 <Card.Img variant="top" src={product2} />
                                 <Card.Body>
                                     <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
@@ -186,8 +186,8 @@ function Products() {
                                 </Card.Body>
                             </Card>
                         </div>
-                        <div className="col-md-3 my-2">
-                            <Card style={{ width: '20rem' }}>
+                        <div className="col-md-6  col-lg-3 my-2">
+                            <Card className='card'>
                                 <Card.Img variant="top" src={product3} />
                                 <Card.Body>
                                     <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
@@ -210,8 +210,8 @@ function Products() {
                                 </Card.Body>
                             </Card>
                         </div>
-                        <div className="col-md-3 my-2">
-                            <Card style={{ width: '20rem' }}>
+                        <div className="col-md-6  col-lg-3 my-2">
+                            <Card className='card'>
                                 <Card.Img variant="top" src={product4} />
                                 <Card.Body>
                                     <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
@@ -240,7 +240,7 @@ function Products() {
 
             <div className="container">
                 <div className="row">
-                    <div className="col-md-3 featured text-center p-0">
+                    <div className="col-xl-3 featured text-center p-0">
                         <div className="content p-5 d-flex flex-column gap-2" >
                             <h3 className='my-4' >Wheels & Tires</h3>
                             <a href="#" >Wheel Covers</a>
@@ -253,7 +253,7 @@ function Products() {
                             <button className='btn btn-sm my-4' style={{ backgroundColor: '#E52727', color: 'white' }}>Shop All</button>
                         </div>
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-xl-9">
 
                         <Tabs
                             defaultActiveKey="featured"
@@ -263,7 +263,7 @@ function Products() {
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
                                 <div className="row cards">
-                                    <div className="col-md-3 my-2 ">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 ">
                                         <Card className='product' >
                                             <Card.Img variant="top" src={product1} />
                                             <Card.Body>
@@ -287,7 +287,7 @@ function Products() {
                                             </Card.Body>
                                         </Card>
                                     </div>
-                                    <div className="col-md-3 my-2 ">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3  my-2 ">
                                         <Card className='product'>
                                             <Card.Img variant="top" src={product2} />
                                             <Card.Body>
@@ -311,7 +311,7 @@ function Products() {
                                             </Card.Body>
                                         </Card>
                                     </div>
-                                    <div className="col-md-3 my-2">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
                                         <Card className='product'>
                                             <Card.Img variant="top" src={product3} />
                                             <Card.Body>
@@ -335,7 +335,7 @@ function Products() {
                                             </Card.Body>
                                         </Card>
                                     </div>
-                                    <div className="col-md-3 my-2">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
                                         <Card className='product'>
                                             <Card.Img variant="top" src={product4} />
                                             <Card.Body>
@@ -375,7 +375,7 @@ function Products() {
 
             <div className="container my-5">
                 <div className="row">
-                    <div className="col-md-3 featured2 text-center p-0">
+                    <div className="col-xl-3 featured2 text-center p-0">
                         <div className="content p-5 d-flex flex-column gap-2" >
                             <h3 className='my-4' >Interior Parts</h3>
                             <a href="#" >Dashboards</a>
@@ -388,7 +388,8 @@ function Products() {
                             <button className='btn btn-sm my-4' style={{ backgroundColor: '#E52727', color: 'white' }}>Shop All</button>
                         </div>
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-xl-9">
+
                         <Tabs
                             defaultActiveKey="featured"
                             id="uncontrolled-tab-example"
@@ -397,7 +398,7 @@ function Products() {
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
                                 <div className="row cards">
-                                    <div className="col-md-3 my-2 ">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 ">
                                         <Card className='product' >
                                             <Card.Img variant="top" src={'/Images/arrivals/product-3-245x245.jpg'} />
                                             <Card.Body>
@@ -421,7 +422,7 @@ function Products() {
                                             </Card.Body>
                                         </Card>
                                     </div>
-                                    <div className="col-md-3 my-2">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3  my-2 ">
                                         <Card className='product'>
                                             <Card.Img variant="top" src={'/Images/arrivals/product-4-245x245.jpg'} />
                                             <Card.Body>
@@ -445,7 +446,7 @@ function Products() {
                                             </Card.Body>
                                         </Card>
                                     </div>
-                                    <div className="col-md-3 my-2">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
                                         <Card className='product'>
                                             <Card.Img variant="top" src={'/Images/arrivals/product-5-245x245.jpg'} />
                                             <Card.Body>
@@ -469,9 +470,9 @@ function Products() {
                                             </Card.Body>
                                         </Card>
                                     </div>
-                                    <div className="col-md-3 my-2">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
                                         <Card className='product'>
-                                            <Card.Img variant="top" src={product5} />
+                                            <Card.Img variant="top" src={'/Images/arrivals/product-7-245x245.jpg'} />
                                             <Card.Body>
                                                 <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
                                                 <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
@@ -509,7 +510,7 @@ function Products() {
 
             <div className="container my-5">
                 <div className="row">
-                    <div className="col-md-3 featured3 text-center p-0">
+                    <div className="col-xl-3 featured3 text-center p-0">
                         <div className="content p-5 d-flex flex-column gap-2" >
                             <h3 className='my-4' >Wheels & Tires</h3>
                             <a href="#" >Wheel Covers</a>
@@ -522,7 +523,8 @@ function Products() {
                             <button className='btn btn-sm my-4' style={{ backgroundColor: '#E52727', color: 'white' }}>Shop All</button>
                         </div>
                     </div>
-                    <div className="col-md-9">
+                    <div className="col-xl-9">
+
                         <Tabs
                             defaultActiveKey="featured"
                             id="uncontrolled-tab-example"
@@ -530,10 +532,10 @@ function Products() {
                             color='black'
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
-                            <div className="row cards">
-                                    <div className="col-md-3 my-2 ">
+                                <div className="row cards">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 ">
                                         <Card className='product' >
-                                            <Card.Img variant="top" src={'/Images/arrivals/product-1-245x245.jpg'} />
+                                            <Card.Img variant="top" src={product1} />
                                             <Card.Body>
                                                 <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
                                                 <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
@@ -555,9 +557,9 @@ function Products() {
                                             </Card.Body>
                                         </Card>
                                     </div>
-                                    <div className="col-md-3 my-2">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3  my-2 ">
                                         <Card className='product'>
-                                            <Card.Img variant="top" src={product5} />
+                                            <Card.Img variant="top" src={product2} />
                                             <Card.Body>
                                                 <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
                                                 <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
@@ -579,7 +581,7 @@ function Products() {
                                             </Card.Body>
                                         </Card>
                                     </div>
-                                    <div className="col-md-3 my-2">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
                                         <Card className='product'>
                                             <Card.Img variant="top" src={product3} />
                                             <Card.Body>
@@ -603,9 +605,9 @@ function Products() {
                                             </Card.Body>
                                         </Card>
                                     </div>
-                                    <div className="col-md-3 my-2">
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
                                         <Card className='product'>
-                                            <Card.Img variant="top" src={product2} />
+                                            <Card.Img variant="top" src={product4} />
                                             <Card.Body>
                                                 <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
                                                 <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>

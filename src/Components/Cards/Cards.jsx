@@ -6,10 +6,10 @@ import {MdOutlineLocalOffer} from 'react-icons/md'
 const Cards = () => {
   return (
     <div className="container">
-        <div className="row px-5 py-4" style={{borderBottom:'1px solid gray'}}>
-            <div className="col-md-3">
+        <div className="d-flex flex-wrap justify-content-between gap-1 py-4" style={{borderBottom:'1px solid gray',margin:'auto'}}>
+            <div >
                 <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-4 pt-2">
                      <i style={{fontSize:'55px',color:'#E52727'}}><LiaShippingFastSolid /></i>
                     </div>
                     <div className="col-md-8">
@@ -18,9 +18,9 @@ const Cards = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-md-3">
+            <div >
                 <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-4 pt-2">
                      <i style={{fontSize:'50px',color:'#E52727'}}><FiPhoneCall className='mt-4'/></i>
                     </div>
                     <div className="col-md-8">
@@ -29,9 +29,9 @@ const Cards = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-md-3">
+            <div >
                 <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-4 pt-3">
                      <i style={{fontSize:'55px',color:'#E52727'}}><MdPayment /></i>
                     </div>
                     <div className="col-md-8">
@@ -40,9 +40,9 @@ const Cards = () => {
                     </div>
                 </div>
             </div>
-            <div className="col-md-3">
+            <div >
                 <div className="row">
-                    <div className="col-md-3">
+                    <div className="col-md-4 pt-2">
                      <i style={{fontSize:'50px',color:'#E52727'}} ><MdOutlineLocalOffer className='mt-3 '/></i>
                     </div>
                     <div className="col-md-8">
