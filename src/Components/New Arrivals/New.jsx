@@ -20,7 +20,7 @@ const New = () => {
                 </div>
             </div>
             <div className="d-flex flex-wrap justify-content-center gap-md-3 gap-lg-1 pt-3" >
-                <div className='mt-1' style={{ border: '1px solid lightgray',width:'20rem' }}>
+                <div className='mt-1' style={{ border: '1px solid lightgray', width: '20rem' }}>
                     <div className="row">
                         <div className="col-md-3 pt-2">
                             <img src="/Images/arrivals/product-1-245x245.jpg" width={'100px'} alt="" />
@@ -41,7 +41,7 @@ const New = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mt-1' style={{ border: '1px solid lightgray',width:'20rem' }}>
+                <div className='mt-1' style={{ border: '1px solid lightgray', width: '20rem' }}>
                     <div className="row">
                         <div className="col-md-3 pt-2">
                             <img src="/Images/arrivals/product-2-245x245.jpg" width={'100px'} alt="" />
@@ -62,7 +62,7 @@ const New = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mt-1' style={{ border: '1px solid lightgray',width:'20rem' }}>
+                <div className='mt-1' style={{ border: '1px solid lightgray', width: '20rem' }}>
                     <div className="row">
                         <div className="col-md-3 pt-2">
                             <img src="/Images/arrivals/product-3-245x245.jpg" width={'100px'} alt="" />
@@ -83,7 +83,7 @@ const New = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mt-1' style={{ border: '1px solid lightgray',width:'20rem' }}>
+                <div className='mt-1' style={{ border: '1px solid lightgray', width: '20rem' }}>
                     <div className="row">
                         <div className="col-md-3 pt-2">
                             <img src="/Images/arrivals/product-4-245x245.jpg" width={'100px'} alt="" />
@@ -106,7 +106,7 @@ const New = () => {
                 </div>
             </div>
             <div className="d-flex flex-wrap justify-content-center gap-md-3 gap-lg-1 pt-3" >
-                <div className='mt-1' style={{ border: '1px solid lightgray',width:'20rem' }}>
+                <div className='mt-1' style={{ border: '1px solid lightgray', width: '20rem' }}>
                     <div className="row">
                         <div className="col-md-3 pt-2">
                             <img src="/Images/arrivals/product-1-245x245.jpg" width={'100px'} alt="" />
@@ -127,7 +127,7 @@ const New = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mt-1' style={{ border: '1px solid lightgray',width:'20rem' }}>
+                <div className='mt-1' style={{ border: '1px solid lightgray', width: '20rem' }}>
                     <div className="row">
                         <div className="col-md-3 pt-2">
                             <img src="/Images/arrivals/product-2-245x245.jpg" width={'100px'} alt="" />
@@ -148,7 +148,7 @@ const New = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mt-1' style={{ border: '1px solid lightgray',width:'20rem' }}>
+                <div className='mt-1' style={{ border: '1px solid lightgray', width: '20rem' }}>
                     <div className="row">
                         <div className="col-md-3 pt-2">
                             <img src="/Images/arrivals/product-3-245x245.jpg" width={'100px'} alt="" />
@@ -169,7 +169,7 @@ const New = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mt-1' style={{ border: '1px solid lightgray',width:'20rem' }}>
+                <div className='mt-1' style={{ border: '1px solid lightgray', width: '20rem' }}>
                     <div className="row">
                         <div className="col-md-3 pt-2">
                             <img src="/Images/arrivals/product-4-245x245.jpg" width={'100px'} alt="" />
@@ -257,36 +257,27 @@ const New = () => {
             <div className="container my-5 brands">
                 <div className="d-flex flex-wrap justify-content-center gap-4">
 
-                    <div >
-                        <img src="/Images/Brands/brand-1.png" alt="" />
-                    </div>
-                    <div >
-                        <img src="/Images/Brands/brand-2.png" alt="" />
-                    </div>
-                    <div >
-                        <img src="/Images/Brands/brand-3.png" alt="" />
-                    </div>
-                    <div >
-                        <img src="/Images/Brands/brand-4.png" alt="" />
-                    </div>
-                    <div >
-                        <img src="/Images/Brands/brand-5.png" alt="" />
-                    </div>
-                    <div >
-                        <img src="/Images/Brands/brand-6.png" alt="" />
-                    </div>
-                    <div >
-                        <img src="/Images/Brands/brand-7.png" alt="" />
-                    </div>
-                    <div >
-                        <img src="/Images/Brands/brand-10.png" alt="" />
-                    </div>
-                    <div >
-                        <img src="/Images/Brands/brand-11.png" alt="" />
-                    </div>
-                    <div >
-                        <img src="/Images/Brands/brand-12.png" alt="" />
-                    </div>
+                    <img src="/Images/Brands/brand-1.png" alt="" />
+
+                    <img src="/Images/Brands/brand-2.png" alt="" />
+
+                    <img src="/Images/Brands/brand-3.png" alt="" />
+
+                    <img src="/Images/Brands/brand-4.png" alt="" />
+
+                    <img src="/Images/Brands/brand-5.png" alt="" />
+
+                    <img src="/Images/Brands/brand-6.png" alt="" />
+
+                    <img src="/Images/Brands/brand-7.png" alt="" />
+
+                    <img src="/Images/Brands/brand-10.png" alt="" />
+
+                    <img src="/Images/Brands/brand-11.png" alt="" />
+
+                    <img src="/Images/Brands/brand-12.png" alt="" />
+
+
                 </div>
             </div>
         </div>

@@ -15,7 +15,7 @@
     background-image: url('/Images/banner2.jpg');
     background-repeat: no-repeat;
     padding: none;
-    transition: 0.3s ease-in;
+    transition: 0.3s ease-in;   
  }
 .adds2 h3{
     color:black;

@@ -6,15 +6,24 @@ import product1 from '/Images/product1.jpg'
 import product2 from '/Images/product2.jpg'
 import product3 from '/Images/product3.jpg'
 import product4 from '/Images/product4.jpg'
-import product5 from '/Images/product5.jpg'
-import { MdDone } from 'react-icons/md'
 import { LiaStarSolid } from 'react-icons/lia'
 import { RiStarSLine } from 'react-icons/ri'
+import { MdDone } from 'react-icons/md'
 import { BsCartCheck } from 'react-icons/bs'
 import { GrFormNext } from 'react-icons/gr'
 import { GrFormPrevious } from 'react-icons/gr'
+import { useDispatch, useSelector } from 'react-redux'
+import { singleProduct } from '../../Features/ProductSlice';
+import { Link } from 'react-router-dom';
+
+import CardProduct from './Card';
 import './style.css'
 function Products() {
+    const dispatch = useDispatch()
+    const products = useSelector(state => state.products.allProducts)
+    const topfourProducts = [...products].sort((a, b) => a.id > b.id ? 1 : -1).slice(0, 4);
+    const lastfourProducts = [...products].sort((a, b) => a.id > b.id ? -1 : 1).slice(0, 4);
+
     return (
         <>
             <div className="container d-flex flex-wrap justify-content-between mt-5" style={{ borderBottom: '1px solid lightgray' }}>
@@ -30,104 +39,14 @@ function Products() {
             </div>
             <div className="container my-5">
                 <div className="row products1">
-                    <div className="col-md-6  col-lg-3 my-2">
-                        <Card className='card' >
-                            <Card.Img variant="top" src={product1} />
-                            <Card.Body>
-                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                <div className="d-flex justify-content-between">
-                                    <div className="icons">
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                    </div>
-                                    <span color='gray'>4 on 3 reviews</span>
-                                </div>
-                                <div className="d-flex justify-content-between my-2">
-                                    <Card.Title >$354.00</Card.Title>
-                                    <a href="#"><BsCartCheck /></a>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="col-md-6  col-lg-3 my-2">
-                        <Card className='card'>
-                            <Card.Img variant="top" src={product2} />
-                            <Card.Body>
-                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                <div className="d-flex justify-content-between">
-                                    <div className="icons">
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                    </div>
-                                    <span color='gray'>4 on 3 reviews</span>
-                                </div>
-                                <div className="d-flex justify-content-between my-2">
-                                    <Card.Title >$354.00</Card.Title>
-                                    <a href="#"><BsCartCheck /></a>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="col-md-6  col-lg-3 my-2">
-                        <Card className='card'>
-                            <Card.Img variant="top" src={product3} />
-                            <Card.Body>
-                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                <div className="d-flex justify-content-between">
-                                    <div className="icons">
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                    </div>
-                                    <span color='gray'>4 on 3 reviews</span>
-                                </div>
-                                <div className="d-flex justify-content-between my-2">
-                                    <Card.Title >$354.00</Card.Title>
-                                    <a href="#"><BsCartCheck /></a>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                    </div>
-                    <div className="col-md-6  col-lg-3 my-2">
-                        <Card className='card'>
-                            <Card.Img variant="top" src={product4} />
-                            <Card.Body>
-                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                <div className="d-flex justify-content-between">
-                                    <div className="icons">
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                    </div>
-                                    <span color='gray'>4 on 3 reviews</span>
-                                </div>
-                                <div className="d-flex justify-content-between my-2">
-                                    <Card.Title >$354.00</Card.Title>
-                                    <a href="#"><BsCartCheck /></a>
-                                </div>
-                            </Card.Body>
-                        </Card>
-                    </div>
+                    {topfourProducts.map((item) => {
+                        return (
+                            <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 " key={item.id}>
+                                <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
+                            </div>
+                        )
+                    })}
                 </div>
-
             </div>
 
             <div className="offer text-center">
@@ -138,102 +57,13 @@ function Products() {
             <div className="products">
                 <div className="container my-5  py-5">
                     <div className="row products1">
-                        <div className="col-md-6  col-lg-3 my-2">
-                            <Card className='card' >
-                                <Card.Img variant="top" src={product1} />
-                                <Card.Body>
-                                    <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                    <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                    <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                    <div className="d-flex justify-content-between">
-                                        <div className="icons">
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                        </div>
-                                        <span color='gray'>4 on 3 reviews</span>
-                                    </div>
-                                    <div className="d-flex justify-content-between my-2">
-                                        <Card.Title >$354.00</Card.Title>
-                                        <a href="#"><BsCartCheck /></a>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className="col-md-6  col-lg-3 my-2">
-                            <Card className='card'>
-                                <Card.Img variant="top" src={product2} />
-                                <Card.Body>
-                                    <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                    <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                    <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                    <div className="d-flex justify-content-between">
-                                        <div className="icons">
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                        </div>
-                                        <span color='gray'>4 on 3 reviews</span>
-                                    </div>
-                                    <div className="d-flex justify-content-between my-2">
-                                        <Card.Title >$354.00</Card.Title>
-                                        <a href="#"><BsCartCheck /></a>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className="col-md-6  col-lg-3 my-2">
-                            <Card className='card'>
-                                <Card.Img variant="top" src={product3} />
-                                <Card.Body>
-                                    <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                    <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                    <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                    <div className="d-flex justify-content-between">
-                                        <div className="icons">
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                        </div>
-                                        <span color='gray'>4 on 3 reviews</span>
-                                    </div>
-                                    <div className="d-flex justify-content-between my-2">
-                                        <Card.Title >$354.00</Card.Title>
-                                        <a href="#"><BsCartCheck /></a>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </div>
-                        <div className="col-md-6  col-lg-3 my-2">
-                            <Card className='card'>
-                                <Card.Img variant="top" src={product4} />
-                                <Card.Body>
-                                    <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                    <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                    <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                    <div className="d-flex justify-content-between">
-                                        <div className="icons">
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                            <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                        </div>
-                                        <span color='gray'>4 on 3 reviews</span>
-                                    </div>
-                                    <div className="d-flex justify-content-between my-2">
-                                        <Card.Title >$354.00</Card.Title>
-                                        <a href="#"><BsCartCheck /></a>
-                                    </div>
-                                </Card.Body>
-                            </Card>
-                        </div>
+                        {lastfourProducts.map((item) => {
+                            return (
+                                <div className="col-md-6  col-lg-3 my-2" key={item.id}>
+                                    <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
             </div>
@@ -263,102 +93,14 @@ function Products() {
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
                                 <div className="row cards">
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 ">
-                                        <Card className='product' >
-                                            <Card.Img variant="top" src={product1} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3  my-2 ">
-                                        <Card className='product'>
-                                            <Card.Img variant="top" src={product2} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
-                                        <Card className='product'>
-                                            <Card.Img variant="top" src={product3} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
-                                        <Card className='product'>
-                                            <Card.Img variant="top" src={product4} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
+                                    {topfourProducts.map((item) => {
+                                        return (
+                                            <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 " key={item.id}>
+                                                <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
+                                            </div>
+                                        )
+                                    })}
+
                                 </div>
                             </Tab>
                             <Tab eventKey="bestsellers" title="BestSellers">
@@ -398,102 +140,15 @@ function Products() {
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
                                 <div className="row cards">
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 ">
-                                        <Card className='product' >
-                                            <Card.Img variant="top" src={'/Images/arrivals/product-3-245x245.jpg'} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3  my-2 ">
-                                        <Card className='product'>
-                                            <Card.Img variant="top" src={'/Images/arrivals/product-4-245x245.jpg'} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
-                                        <Card className='product'>
-                                            <Card.Img variant="top" src={'/Images/arrivals/product-5-245x245.jpg'} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
-                                        <Card className='product'>
-                                            <Card.Img variant="top" src={'/Images/arrivals/product-7-245x245.jpg'} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
+                                    {lastfourProducts.map((item, index) => {
+                                        return (
+                                            <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2" key={index}>
+                                                <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
+                                            </div>
+                                        )
+                                    })}
+
+
                                 </div>
                             </Tab>
                             <Tab eventKey="bestsellers" title="BestSellers">
@@ -510,7 +165,7 @@ function Products() {
 
             <div className="container my-5">
                 <div className="row">
-                    <div className="col-xl-3 featured3 text-center p-0">
+                    <div className="col-xl-3 featured text-center p-0">
                         <div className="content p-5 d-flex flex-column gap-2" >
                             <h3 className='my-4' >Wheels & Tires</h3>
                             <a href="#" >Wheel Covers</a>
@@ -533,102 +188,14 @@ function Products() {
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
                                 <div className="row cards">
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 ">
-                                        <Card className='product' >
-                                            <Card.Img variant="top" src={product1} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3  my-2 ">
-                                        <Card className='product'>
-                                            <Card.Img variant="top" src={product2} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
-                                        <Card className='product'>
-                                            <Card.Img variant="top" src={product3} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
-                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2">
-                                        <Card className='product'>
-                                            <Card.Img variant="top" src={product4} />
-                                            <Card.Body>
-                                                <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
-                                                <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
-                                                <Card.Title style={{ fontSize: "18px" }}>Brandix Brake Kit BDX-7507370-S</Card.Title>
-                                                <div className="d-flex justify-content-between">
-                                                    <div className="icons">
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <LiaStarSolid color='#FFD333' fontSize={'20px'} />
-                                                        <RiStarSLine color='#FFD333' fontSize={'20px'} />
-                                                    </div>
-                                                    <span color='gray'>4 on 3 reviews</span>
-                                                </div>
-                                                <div className="d-flex justify-content-between my-2">
-                                                    <Card.Title >$354.00</Card.Title>
-                                                    <a href="#"><BsCartCheck /></a>
-                                                </div>
-                                            </Card.Body>
-                                        </Card>
-                                    </div>
+                                    {topfourProducts.map((item) => {
+                                        return (
+                                            <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 " key={item.id}>
+                                                <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
+                                            </div>
+                                        )
+                                    })}
+
                                 </div>
                             </Tab>
                             <Tab eventKey="bestsellers" title="BestSellers">

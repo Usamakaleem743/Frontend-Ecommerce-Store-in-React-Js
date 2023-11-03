@@ -1,11 +1,19 @@
-import Button from 'react-bootstrap/Button';
-import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import {BsCartFill} from 'react-icons/bs'
+import Badge from 'react-bootstrap/Badge'
 import './Style.css'
+import { Link } from 'react-router-dom';
+import CartModel from '../Cart/Cart';
+import { useState } from 'react';
+import { useSelector } from 'react-redux';
 function Header() {
+  const [show,setShow]=useState(false);
+  const handleShow=()=>{
+    return setShow(true)
+  }
+  const quantity=useSelector(state=>state.cart.totalQuantity)
   return (
     <>
     <div className="container-fluid">
@@ -33,10 +41,12 @@ function Header() {
       </div>
     </div>
       
-      <div className="container-fluid">
-      <Navbar expand="sm" className='menu' >
-        <Container >
-          <Navbar.Brand href="#"><h4><span style={{color:'red'}}>Red</span>Parts</h4></Navbar.Brand>
+      <div className="container" >
+      <Navbar expand="md"  >
+        < >
+        <Link to={'/'} style={{textDecoration:'none'}}>
+          <h2 ><h4><span style={{color:'red'}}>Red</span>Parts</h4></h2>
+          </Link>
           <Navbar.Toggle />
           <Navbar.Collapse >
             <Nav
@@ -75,20 +85,12 @@ function Header() {
                 </NavDropdown.Item>
               </NavDropdown>
             </Nav>
-            <Form className="d-flex form">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-              <Button variant="outline-danger">Search</Button>
-            </Form>
+            <Link onClick={() => handleShow()} className='ms-5 text-light'><BsCartFill style={{ fontSize: '25px',color:'red' }} /><Badge bg="primary" pill>{quantity}</Badge></Link>
           </Navbar.Collapse>
-        </Container>
+        </>
       </Navbar>
       </div>
-      
+      {show && <CartModel handleShow={()=>setShow} openmodel={show} />}
     </>
   );
 }
