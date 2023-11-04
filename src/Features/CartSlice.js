@@ -20,11 +20,19 @@ export const cartSlice=createSlice({
           addnew(state,state.cartProducts,product)
         }
         console.log(state.cartProducts)
+    },
+    removeFromcart:(state,action)=>{
+      const product=action.payload;
+      const existingProduct=state.cartProducts.find(item=>item.id===product.id);
+      if(existingProduct.quantity===1){
+          removeProduct(state,state.cartProducts,product)
+      }
+      else{
+         decrementProduct(state,existingProduct,product)
+      }
     }
   }
 });
-
-
 
 const incrementProduct=(state,existingProduct,product)=>{
    existingProduct.quantity++;
@@ -44,10 +52,19 @@ const addnew=(state,cart,product)=>{
   cart.push(newProduct)
   updateCarttotal(state,product.price)
 }
+const removeProduct=(state,cart,product)=>{
+    state.cartProducts=cart.filter(item=>item.id!==product.id);
+    updateCarttotal(state,-product.price)
+};
+const decrementProduct=(state,existingProduct,product)=>{
+   existingProduct.quantity--;
+   existingProduct.totalPrice-=product.price;
+   updateCarttotal(state,-product.price)
+
+}
 const updateCarttotal=(state,productPrice)=>{
   state.totalQuantity+= productPrice > 0 ? 1 : -1 ;
   state.totalPrice+=productPrice;
 }
-
-export const {addtocart}=cartSlice.actions
+export const {addtocart,removeFromcart}=cartSlice.actions
 export default cartSlice.reducer;

@@ -1,9 +1,10 @@
 import Modal from 'react-bootstrap/Modal';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { removeFromcart } from '../../Features/CartSlice';
 const CartModel = ({ handleShow, openmodel }) => {
   const cartProducts = useSelector(state => state.cart.cartProducts);
   const totalPrice = useSelector(state => state.cart.totalPrice);
+
   const dispatch = useDispatch()
   return (
     <>
@@ -26,7 +27,7 @@ const CartModel = ({ handleShow, openmodel }) => {
                   
                   <div className="d-flex justify-content-between">
                     <h6>Quantity : {item.quantity}</h6>
-                    <button onClick={() => dispatch(removefromcart(item))} className='btn btn-sm btn-danger'>Remove</button>
+                    <button onClick={() => dispatch(removeFromcart(item))} className='btn btn-sm btn-danger'>Remove</button>
                   </div>
                 </div>
               </div>

@@ -41,7 +41,7 @@ function Header() {
       </div>
     </div>
       
-      <div className="container" >
+      <div className="container-fluid px-md-5 mainbar" >
       <Navbar expand="md"  >
         < >
         <Link to={'/'} style={{textDecoration:'none'}}>

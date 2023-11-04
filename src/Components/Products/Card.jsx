@@ -40,7 +40,7 @@ const CardProduct = ({id,name,img,text,price}) => {
             } /></span>
           </div>
         </Card.Body>
-      </Card>
+      </Card> 
     </>
   )
 }

@@ -1,28 +1,17 @@
-import Badge from 'react-bootstrap/Badge';
-import Card from 'react-bootstrap/Card';
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
-import product1 from '/Images/product1.jpg'
-import product2 from '/Images/product2.jpg'
-import product3 from '/Images/product3.jpg'
-import product4 from '/Images/product4.jpg'
-import { LiaStarSolid } from 'react-icons/lia'
-import { RiStarSLine } from 'react-icons/ri'
-import { MdDone } from 'react-icons/md'
-import { BsCartCheck } from 'react-icons/bs'
 import { GrFormNext } from 'react-icons/gr'
 import { GrFormPrevious } from 'react-icons/gr'
-import { useDispatch, useSelector } from 'react-redux'
-import { singleProduct } from '../../Features/ProductSlice';
-import { Link } from 'react-router-dom';
+import {  useSelector } from 'react-redux'
+import { useMemo } from 'react';
 
 import CardProduct from './Card';
 import './style.css'
 function Products() {
-    const dispatch = useDispatch()
-    const products = useSelector(state => state.products.allProducts)
-    const topfourProducts = [...products].sort((a, b) => a.id > b.id ? 1 : -1).slice(0, 4);
-    const lastfourProducts = [...products].sort((a, b) => a.id > b.id ? -1 : 1).slice(0, 4);
+    
+    const products =useMemo(()=>useSelector(state => state.products.allProducts),[]) 
+    const topfourProducts =useMemo(()=>[...products].sort((a, b) => a.id > b.id ? 1 : -1).slice(0, 4),[])
+    const lastfourProducts =useMemo(()=>[...products].sort((a, b) => a.id > b.id ? -1 : 1).slice(0, 4),[]) 
 
     return (
         <>
@@ -34,7 +23,7 @@ function Products() {
                     <button className='btn btn-sm btn-outline'>Hand Tools</button>
                     <button className='btn btn-sm btn-outline'>Plumbing</button>
                     <button className='btn btn-sm me-2' style={{ backgroundColor: '#E52727', color: 'white' }}><GrFormPrevious fontSize={'19px'} /></button>
-                    <button className='btn btn-sm' style={{ backgroundColor: '#E52727', color: 'white' }}><GrFormNext fontSize={'19px'} /></button>
+                    <button className='btn btn-sm' style={{ backgroundColor: '#E52727'}}><GrFormNext fontSize={'19px'}  /></button>
                 </div>
             </div>
             <div className="container my-5">
@@ -59,7 +48,7 @@ function Products() {
                     <div className="row products1">
                         {lastfourProducts.map((item) => {
                             return (
-                                <div className="col-md-6  col-lg-3 my-2" key={item.id}>
+                                <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2" key={item.id}>
                                     <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
                                 </div>
                             )

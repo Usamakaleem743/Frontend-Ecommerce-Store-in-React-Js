@@ -64,7 +64,7 @@ const Footer = () => {
                         <p style={{color:'gray'}}>Enter your email address below to subscribe to our newsletter and keep up to date with discounts and special offers.</p>
                         <form action="" className='d-flex gap-3'>
                             <input type="email" placeholder='Email Address..' className='form-control' />
-                            <button className='btn' style={{backgroundColor:'#FF3333',color:'white'}}>Subscribe</button>
+                            <button className='btn' onClick={e=>e.preventDefault()} style={{backgroundColor:'#FF3333',color:'white'}}>Subscribe</button>
                         </form>
                         <p style={{color:'gray' , padding:'10px 0px'}}>Follow us on social networks</p>
                     </div>
