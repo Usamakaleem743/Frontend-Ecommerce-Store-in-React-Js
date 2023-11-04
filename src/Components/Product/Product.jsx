@@ -14,7 +14,7 @@ const SingleProduct = () => {
           return (
             <Row className='my-5' key={index}>
               <Col md={6} >
-                <img src={item.img}className='card-image' alt="" />
+                <img src={item.img} className='card-image' alt="" />
             </Col>
             <Col md={6}  >
               <Card className='card-content'>
