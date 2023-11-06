@@ -45,15 +45,15 @@ function Header() {
       <Navbar expand="md"  >
         < >
         <Link to={'/'} style={{textDecoration:'none'}}>
-          <h2 ><h4><span style={{color:'red'}}>Red</span>Parts</h4></h2>
+          <h2 ><span style={{color:'red'}}>Red</span>Parts</h2>
           </Link>
           <Navbar.Toggle />
           <Navbar.Collapse >
             <Nav
-              className="me-auto my-2 my-lg-0"
+              className="me-auto my-2 my-lg-0 mx-5"
             >
-              <Nav.Link href="#action1" >Home</Nav.Link>
-              <Nav.Link href="#action2">Shop</Nav.Link>
+              <Nav.Link><Link to={'/'} style={{textDecoration:'none', color:'black'}}> Home</Link></Nav.Link>
+              <Nav.Link><Link to={'/shop'} style={{textDecoration:'none', color:'black'}}> Shop</Link></Nav.Link>
               <NavDropdown title="Blog" id="navbarScrollingDropdown">
                 <NavDropdown.Item href="#action3">Blog1</NavDropdown.Item>
                 <NavDropdown.Item href="#action4">

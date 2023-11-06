@@ -36,7 +36,7 @@ const CardProduct = ({id,name,img,text,price}) => {
           </div>
           <div className="d-flex justify-content-between my-2">
             <Card.Title>${price}</Card.Title>
-            <span ><BsCartCheck onClick={() => {return(dispatch(addtocart({id, name, img, price, text,quantity:1,totalPrice:price})), alert('Product Add Successfully') ) }
+            <span ><BsCartCheck className='cart' onClick={() => {return(dispatch(addtocart({id, name, img, price, text,quantity:1,totalPrice:price})), alert('Product Add Successfully') ) }
             } /></span>
           </div>
         </Card.Body>

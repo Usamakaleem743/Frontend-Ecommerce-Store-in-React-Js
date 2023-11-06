@@ -2,17 +2,36 @@ import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import { GrFormNext } from 'react-icons/gr'
 import { GrFormPrevious } from 'react-icons/gr'
-import {  useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { useMemo } from 'react';
-
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import CardProduct from './Card';
 import './style.css'
 function Products() {
+    const responsive = {
+        superLargeDesktop: {
+            breakpoint: { max: 4000, min: 3000 },
+            items: 5
+        },
+        desktop: {
+            breakpoint: { max: 3000, min: 1024 },
+            items: 4
+        },
+        tablet: {
+            breakpoint: { max: 1024, min: 464 },
+            items: 3
+        },
+        mobile: {
+            breakpoint: { max: 464, min: 0 },
+            items: 1
+        }
+    };
+    const products = useMemo(() => useSelector(state => state.products.allProducts), [])
+    const topfourProducts = useMemo(() => [...products].sort((a, b) => a.id > b.id ? 1 : -1), [])
+    const lastfourProducts = useMemo(() => [...products].sort((a, b) => a.id > b.id ? -1 : 1), [])
+    ;
     
-    const products =useMemo(()=>useSelector(state => state.products.allProducts),[]) 
-    const topfourProducts =useMemo(()=>[...products].sort((a, b) => a.id > b.id ? 1 : -1).slice(0, 4),[])
-    const lastfourProducts =useMemo(()=>[...products].sort((a, b) => a.id > b.id ? -1 : 1).slice(0, 4),[]) 
-
     return (
         <>
             <div className="container d-flex flex-wrap justify-content-between mt-5" style={{ borderBottom: '1px solid lightgray' }}>
@@ -22,19 +41,33 @@ function Products() {
                     <button className='btn btn-sm btn-outline'>Power Tools</button>
                     <button className='btn btn-sm btn-outline'>Hand Tools</button>
                     <button className='btn btn-sm btn-outline'>Plumbing</button>
+                     
                     <button className='btn btn-sm me-2' style={{ backgroundColor: '#E52727', color: 'white' }}><GrFormPrevious fontSize={'19px'} /></button>
-                    <button className='btn btn-sm' style={{ backgroundColor: '#E52727'}}><GrFormNext fontSize={'19px'}  /></button>
+                    <button className='btn btn-sm' style={{ backgroundColor: '#E52727' }}><GrFormNext fontSize={'19px'} /></button>
                 </div>
             </div>
             <div className="container my-5">
                 <div className="row products1">
-                    {topfourProducts.map((item) => {
-                        return (
-                            <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 " key={item.id}>
-                                <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
-                            </div>
-                        )
-                    })}
+                    <Carousel
+                        swipeable={true}
+                        draggable={true}
+                        showDots={false}
+                        arrows={false}
+                        responsive={responsive}
+                        ssr={true} // means to render carousel on server-side.
+                        infinite={true}
+                        autoPlay={true}
+                        autoPlaySpeed={1000}
+                        transitionDuration={3000}
+                    >
+                        {topfourProducts.map((item) => {
+                            return (
+                                <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 " key={item.id}>
+                                    <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
+                                </div>
+                            )
+                        })}
+                    </Carousel>
                 </div>
             </div>
 
@@ -46,13 +79,26 @@ function Products() {
             <div className="products">
                 <div className="container my-5  py-5">
                     <div className="row products1">
-                        {lastfourProducts.map((item) => {
-                            return (
-                                <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2" key={item.id}>
-                                    <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
-                                </div>
-                            )
-                        })}
+                        <Carousel
+                            swipeable={true}
+                            draggable={true}
+                            showDots={false}
+                            arrows={false}
+                            responsive={responsive}
+                            ssr={true} // means to render carousel on server-side.
+                            infinite={true}
+                            autoPlay={true}
+                            autoPlaySpeed={1000}
+                            transitionDuration={3000}
+                        >
+                            {lastfourProducts.map((item) => {
+                                return (
+                                    <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2" key={item.id}>
+                                        <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
+                                    </div>
+                                )
+                            })}
+                        </Carousel>
                     </div>
                 </div>
             </div>
@@ -82,14 +128,26 @@ function Products() {
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
                                 <div className="row cards">
-                                    {topfourProducts.map((item) => {
-                                        return (
-                                            <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 " key={item.id}>
-                                                <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
-                                            </div>
-                                        )
-                                    })}
-
+                                    <Carousel
+                                        swipeable={true}
+                                        draggable={true}
+                                        showDots={false}
+                                        arrows={false}
+                                        responsive={responsive}
+                                        ssr={true} // means to render carousel on server-side.
+                                        infinite={true}
+                                        autoPlay={true}
+                                        autoPlaySpeed={1000}
+                                        transitionDuration={3000}
+                                    >
+                                        {topfourProducts.map((item) => {
+                                            return (
+                                                <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 " key={item.id}>
+                                                    <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
+                                                </div>
+                                            )
+                                        })}
+                                    </Carousel>
                                 </div>
                             </Tab>
                             <Tab eventKey="bestsellers" title="BestSellers">
@@ -129,15 +187,27 @@ function Products() {
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
                                 <div className="row cards">
-                                    {lastfourProducts.map((item, index) => {
-                                        return (
-                                            <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2" key={index}>
-                                                <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
-                                            </div>
-                                        )
-                                    })}
+                                    <Carousel
+                                        swipeable={true}
+                                        draggable={true}
+                                        showDots={false}
+                                        arrows={false}
+                                        responsive={responsive}
+                                        ssr={true} // means to render carousel on server-side.
+                                        infinite={true}
+                                        autoPlay={true}
+                                        autoPlaySpeed={1000}
+                                        transitionDuration={3000}
+                                    >
+                                        {lastfourProducts.map((item, index) => {
+                                            return (
+                                                <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2" key={index}>
+                                                    <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
+                                                </div>
+                                            )
+                                        })}
 
-
+                                    </Carousel>
                                 </div>
                             </Tab>
                             <Tab eventKey="bestsellers" title="BestSellers">
@@ -177,14 +247,26 @@ function Products() {
                         >
                             <Tab eventKey="featured" title="Featured" style={{ color: 'black' }}>
                                 <div className="row cards">
-                                    {topfourProducts.map((item) => {
-                                        return (
-                                            <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 " key={item.id}>
-                                                <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
-                                            </div>
-                                        )
-                                    })}
-
+                                    <Carousel
+                                        swipeable={true}
+                                        draggable={true}
+                                        showDots={false}
+                                        arrows={false}
+                                        responsive={responsive}
+                                        ssr={true} // means to render carousel on server-side.
+                                        infinite={true}
+                                        autoPlay={true}
+                                        autoPlaySpeed={1000}
+                                        transitionDuration={3000}
+                                    >
+                                        {topfourProducts.map((item) => {
+                                            return (
+                                                <div className="col-md-6 col-lg-6 col-xl-4 col-xxl-3 my-2 " key={item.id}>
+                                                    <CardProduct id={item.id} name={item.name} img={item.img} text={item.text} price={item.price} />
+                                                </div>
+                                            )
+                                        })}
+                                    </Carousel>
                                 </div>
                             </Tab>
                             <Tab eventKey="bestsellers" title="BestSellers">

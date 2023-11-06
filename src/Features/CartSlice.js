@@ -12,7 +12,6 @@ export const cartSlice=createSlice({
     addtocart:(state,action)=>{
         const product=action.payload;
         const existingProduct=state.cartProducts.find(item=>item.id===product.id)
-        
         if(existingProduct){
           incrementProduct(state,existingProduct,product)
         }

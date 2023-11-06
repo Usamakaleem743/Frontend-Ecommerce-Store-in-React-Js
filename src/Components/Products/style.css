@@ -88,6 +88,14 @@
     transform: scale(0.9);
 }
 
+.card:hover .cart{
+    background-color: #E52727;
+    padding: 7px;
+    border-radius: 100%;
+    color: aliceblue;
+    font-size: 32px;
+}
+
 .products1 .card{
     width: 20rem;
 }

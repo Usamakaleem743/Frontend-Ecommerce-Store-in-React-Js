@@ -5,6 +5,7 @@ import Footer from './Components/Footer/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './Components/Home/Home';
 import PageTransition from './Pagetransition/Pagetransition';
+import Productlist from './Components/Productlist/Productlist';
 const App = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const App = () => {
         <Routes>
         <Route path='/' element={<PageTransition><Home/></PageTransition>}/>
         <Route path='/:id' element={<PageTransition><SingleProduct/></PageTransition> }/>
+        <Route path='/shop' element={<PageTransition><Productlist/></PageTransition>}/>
       </Routes>
       <Footer />
       </Router>  
