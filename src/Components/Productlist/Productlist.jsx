@@ -4,15 +4,18 @@ import Accordion from 'react-bootstrap/Accordion';
 import { useSelector } from 'react-redux'
 import { useMemo } from 'react';
 import CardProduct from '../Products/Card';
+import { LiaStarSolid } from 'react-icons/lia'
+import { RiStarSLine } from 'react-icons/ri'
 import Form from 'react-bootstrap/Form';
 const Productlist = () => {
   const products = useMemo(() => useSelector(state => state.products.allProducts), [])
+  const colors=['Black', 'Grey', 'Red ','Blue', 'Orange',  'Brown', 'Pink', 'Yellow', 'Green', 'Purple', 'Maroon', 'Turquoise', 'Cyan', 'Navy', 'blue', 'Gold', 'Tomato', 'Teal', 'Lime', 'Cyan', 'Chocolate',  'Dark', 'blue', 'Navy']
   return (
     <>
       <div className="container-fluid ">
         <h1 style={{ textAlign: 'center' }}>Transmission</h1>
         <div className="row my-5 px-lg-5 mx-lg-5">
-          <div className="col-lg-3 sidebar p-0 ">
+          <div className="col-lg-3 sidebar p-0 " style={{height:'fit-content'}}>
             <h4 className='p-3' style={{ borderBottom: '1px solid lightgray' }}>Filters</h4>
             <Accordion defaultActiveKey="0" flush>
               <Accordion.Item eventKey="0">
@@ -59,27 +62,27 @@ const Productlist = () => {
               <Accordion.Item eventKey="1">
                 <Accordion.Header><b>Vehicle</b></Accordion.Header>
                 <Accordion.Body>
-                  <form onSubmit={e=>e.preventDefault()}>
+                  <form onSubmit={e => e.preventDefault()}>
                     <div className="control d-flex justify-content-between">
-                    <div className='d-flex'>
-                      <input  className='form-check-input me-2 '   type="radio" name="vehicle" id="vehicle"/>
-                      <p>All Parts</p>
-                    </div>
-                    <p style={{fontSize:'12px'}}>57</p>
-                    </div>
-                    <div className="control d-flex justify-content-between">
-                    <div className='d-flex'>
-                      <input  className='form-check-input me-2' type="radio" name="vehicle" id="vehicle"/>
-                      <p>2011 Ford Focus S</p>
-                    </div>
-                    <p style={{fontSize:'12px'}}>12</p>
+                      <div className='d-flex'>
+                        <input className='form-check-input me-2 ' type="radio" name="vehicle" id="vehicle" />
+                        <p>All Parts</p>
+                      </div>
+                      <p style={{ fontSize: '12px' }}>57</p>
                     </div>
                     <div className="control d-flex justify-content-between">
-                    <div className='d-flex'>
-                      <input  className='form-check-input me-2' type="radio" name="vehicle" id="vehicle"/>
-                      <p>2015 Audi A3</p>
+                      <div className='d-flex'>
+                        <input className='form-check-input me-2' type="radio" name="vehicle" id="vehicle" />
+                        <p>2011 Ford Focus S</p>
+                      </div>
+                      <p style={{ fontSize: '12px' }}>12</p>
                     </div>
-                    <p style={{fontSize:'12px'}}>51</p>
+                    <div className="control d-flex justify-content-between">
+                      <div className='d-flex'>
+                        <input className='form-check-input me-2' type="radio" name="vehicle" id="vehicle" />
+                        <p>2015 Audi A3</p>
+                      </div>
+                      <p style={{ fontSize: '12px' }}>51</p>
                     </div>
                     <button className='btn btn-sm btn-outline-primary'>Add Vehicle</button>
                   </form>
@@ -88,35 +91,36 @@ const Productlist = () => {
               <Accordion.Item eventKey="2">
                 <Accordion.Header><b>Price</b></Accordion.Header>
                 <Accordion.Body>
-                <Form.Range />
-                <div className="range d-flex justify-content-between">
-                  <p className='my-2'>$5000 - $8900</p>
-                  <button className='btn btn-outline-primary btn-md'>Filter</button>
-                </div>
+                  <Form.Range />
+                  <div className="range d-flex justify-content-between">
+                    <p className='my-2'>$5000 - $8900</p>
+                    <button className='btn btn-outline-primary btn-md'>Filter</button>
+                  </div>
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="3">
                 <Accordion.Header><b>Rating</b></Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum.
+                  <div className="d-flex justify-content-between">
+                    <div className="icons">
+                      <LiaStarSolid color='#FFD333' fontSize={'20px'} />
+                      <LiaStarSolid color='#FFD333' fontSize={'20px'} />
+                      <LiaStarSolid color='#FFD333' fontSize={'20px'} />
+                      <LiaStarSolid color='#FFD333' fontSize={'20px'} />
+                      <RiStarSLine color='#FFD333' fontSize={'20px'} />
+                    </div>
+                    <span color='gray'>4 on 3 reviews</span>
+                  </div>
                 </Accordion.Body>
               </Accordion.Item>
               <Accordion.Item eventKey="4">
                 <Accordion.Header><b>Color</b></Accordion.Header>
                 <Accordion.Body>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                  eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-                  minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-                  aliquip ex ea commodo consequat. Duis aute irure dolor in
-                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                  culpa qui officia deserunt mollit anim id est laborum.
+                <div className="d-flex flex-wrap justify-content-between gap-2">
+                  {colors.map(item=>
+                         <button style={{backgroundColor:item,borderRadius:'100%',padding:'8px',border:'none'}}> </button>
+                    )}
+                    </div>
                 </Accordion.Body>
               </Accordion.Item>
             </Accordion>

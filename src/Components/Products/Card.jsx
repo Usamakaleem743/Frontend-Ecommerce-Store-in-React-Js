@@ -10,10 +10,10 @@ import { Link } from 'react-router-dom';
 import { singleProduct } from '../../Features/ProductSlice';
 import { useDispatch, useSelector } from 'react-redux'
 
-const CardProduct = ({id,name,img,text,price}) => {
+const CardProduct = ({ id, name, img, text, price }) => {
   const products = useSelector(state => state.products.allProducts)
-    const topfourProducts = [...products].sort((a,b)=>a.id > b.id ? 1 : -1).slice(0, 4);
-    const dispatch=useDispatch()
+  const topfourProducts = [...products].sort((a, b) => a.id > b.id ? 1 : -1).slice(0, 4);
+  const dispatch = useDispatch()
   return (
     <>
       <Card className='card product' onClick={() => dispatch(singleProduct(id))} style={{ cursor: 'pointer' }}>
@@ -36,11 +36,11 @@ const CardProduct = ({id,name,img,text,price}) => {
           </div>
           <div className="d-flex justify-content-between my-2">
             <Card.Title>${price}</Card.Title>
-            <span ><BsCartCheck className='cart' onClick={() => {return(dispatch(addtocart({id, name, img, price, text,quantity:1,totalPrice:price})), alert('Product Add Successfully') ) }
+            <span ><BsCartCheck className='cart' onClick={() => { return (dispatch(addtocart({ id, name, img, price, text, quantity: 1, totalPrice: price })), alert('Product Add Successfully')) }
             } /></span>
           </div>
         </Card.Body>
-      </Card> 
+      </Card>
     </>
   )
 }

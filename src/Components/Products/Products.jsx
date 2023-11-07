@@ -3,7 +3,6 @@ import Tabs from 'react-bootstrap/Tabs';
 import { GrFormNext } from 'react-icons/gr'
 import { GrFormPrevious } from 'react-icons/gr'
 import { useSelector } from 'react-redux'
-import { useMemo } from 'react';
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import CardProduct from './Card';
@@ -27,10 +26,9 @@ function Products() {
             items: 1
         }
     };
-    const products = useMemo(() => useSelector(state => state.products.allProducts), [])
-    const topfourProducts = useMemo(() => [...products].sort((a, b) => a.id > b.id ? 1 : -1), [])
-    const lastfourProducts = useMemo(() => [...products].sort((a, b) => a.id > b.id ? -1 : 1), [])
-    ;
+    const products = useSelector(state => state.products.allProducts)
+    const topfourProducts = [...products].sort((a, b) => a.id > b.id ? 1 : -1)
+    const lastfourProducts = [...products].sort((a, b) => a.id > b.id ? -1 : 1)
     
     return (
         <>
@@ -283,5 +281,4 @@ function Products() {
         </>
     );
 }
-export default Products
-    ;
+export default Products;
