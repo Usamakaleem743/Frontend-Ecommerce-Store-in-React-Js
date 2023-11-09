@@ -40,8 +40,8 @@ function Products() {
                     <button className='btn btn-sm btn-outline'>Hand Tools</button>
                     <button className='btn btn-sm btn-outline'>Plumbing</button>
                      
-                    <button className='btn btn-sm me-2' style={{ backgroundColor: '#E52727', color: 'white' }}><GrFormPrevious fontSize={'19px'} /></button>
-                    <button className='btn btn-sm' style={{ backgroundColor: '#E52727' }}><GrFormNext fontSize={'19px'} /></button>
+                    <button className='btn btn-sm me-2 py-0' style={{ backgroundColor: '#E52727',transform:'skew(-20deg)' }}><GrFormPrevious fontSize={'19px'} /></button>
+                    <button className='btn btn-sm py-0' style={{ backgroundColor: '#E52727',transform:'skew(-20deg)' }}><GrFormNext fontSize={'19px'} /></button>
                 </div>
             </div>
             <div className="container my-5">

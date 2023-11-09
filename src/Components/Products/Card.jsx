@@ -4,23 +4,34 @@ import Card from 'react-bootstrap/Card';
 import { LiaStarSolid } from 'react-icons/lia'
 import { RiStarSLine } from 'react-icons/ri'
 import { BsCartCheck } from 'react-icons/bs'
+import { AiFillHeart } from 'react-icons/ai'
+import { PiBracketsSquareThin } from 'react-icons/pi'
 import { addtocart } from '../../Features/CartSlice';
 import { MdDone } from 'react-icons/md'
 import { Link } from 'react-router-dom';
 import { singleProduct } from '../../Features/ProductSlice';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, } from 'react-redux';
 
 const CardProduct = ({ id, name, img, text, price }) => {
-  const products = useSelector(state => state.products.allProducts)
-  const topfourProducts = [...products].sort((a, b) => a.id > b.id ? 1 : -1).slice(0, 4);
   const dispatch = useDispatch()
   return (
     <>
       <Card className='card product' onClick={() => dispatch(singleProduct(id))} style={{ cursor: 'pointer' }}>
         <Link to={'/' + id} style={{ textDecoration: 'none', color: 'black' }}>
           <Card.Img variant="top" src={img} />
+          <div className="button">
+            <Link></Link>
+            <button className='btn  btn-sm ' style={{ color: 'wheat' }} >Sale</button>
+          </div>
+          <div className="heart" >
+            <span><AiFillHeart /></span>
+          </div>
+          <div className="focus">
+            <span><PiBracketsSquareThin /></span>
+          </div>
         </Link>
         <Card.Body>
+          
           <Badge bg='success'><MdDone fontSize={'15px'} /></Badge>
           <p style={{ fontSize: '12px', marginTop: '10px', color: 'grey' }}>SKU:753-3875-12</p>
           <Card.Title style={{ fontSize: "18px" }}>{name}</Card.Title>

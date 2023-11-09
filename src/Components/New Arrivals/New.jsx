@@ -15,8 +15,8 @@ const New = () => {
                     <button className='btn btn-sm btn-outline'>Wheel Covers</button>
                     <button className='btn btn-sm btn-outline'>Timing Belts</button>
                     <button className='btn btn-sm btn-outline'>Oil Plans</button>
-                    <button className='btn btn-sm me-2' style={{ backgroundColor: '#E52727', color: 'white' }}><GrFormPrevious fontSize={'19px'} /></button>
-                    <button className='btn btn-sm' style={{ backgroundColor: '#E52727', color: 'white' }}><GrFormNext fontSize={'19px'} /></button>
+                    <button className='btn btn-sm me-2 py-0' style={{ backgroundColor: '#E52727',transform:'skew(-20deg)' }}><GrFormPrevious fontSize={'19px'} /></button>
+                    <button className='btn btn-sm py-0' style={{ backgroundColor: '#E52727',transform:'skew(-20deg)' }}><GrFormNext fontSize={'19px'} /></button>
                 </div>
             </div>
             <div className="d-flex flex-wrap justify-content-center gap-md-3 gap-lg-1 pt-3" >
@@ -199,8 +199,8 @@ const New = () => {
                     <button className='btn btn-sm btn-outline'>Special Offers</button>
                     <button className='btn btn-sm btn-outline'>New Arrivals</button>
                     <button className='btn btn-sm btn-outline'>Reviews</button>
-                    <button className='btn btn-sm me-2' style={{ backgroundColor: '#E52727', color: 'white' }}><GrFormPrevious fontSize={'19px'} /></button>
-                    <button className='btn btn-sm' style={{ backgroundColor: '#E52727', color: 'white' }}><GrFormNext fontSize={'19px'} /></button>
+                    <button className='btn btn-sm me-2 py-0' style={{ backgroundColor: '#E52727',transform:'skew(-20deg)' }}><GrFormPrevious fontSize={'19px'} /></button>
+                    <button className='btn btn-sm py-0' style={{ backgroundColor: '#E52727',transform:'skew(-20deg)' }}><GrFormNext fontSize={'19px'} /></button>
                 </div>
             </div>
             <div className="d-flex flex-wrap justify-content-around gap-1 my-4">

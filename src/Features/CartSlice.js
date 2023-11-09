@@ -18,7 +18,6 @@ export const cartSlice=createSlice({
         else{
           addnew(state,state.cartProducts,product)
         }
-        console.log(state.cartProducts)
     },
     removeFromcart:(state,action)=>{
       const product=action.payload;

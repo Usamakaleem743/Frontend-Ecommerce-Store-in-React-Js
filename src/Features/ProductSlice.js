@@ -14,7 +14,7 @@ export const productSlice=createSlice({
       state.product=product;
     }
   }
-});
+})
 
 export const {singleProduct}=productSlice.actions;
-export default productSlice.reducer
+export default productSlice.reducer;
